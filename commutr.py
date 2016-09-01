@@ -22,9 +22,9 @@ import csv
 from time import gmtime, strftime
 
 API_KEY = "AIzaSyAtQd14gP2FvJ08dniIiNo74qrpsI-tH0c"
-query_times = ["18:02","17:36","17:37","17:40","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00",]
-origins = [("Estr.+de+Benfica+627,+1500-087+Lisboa","Benfica"),("38.799248, -9.323340","Rua Buganvilias")]
-destinations = [("38.7544013,-9.1603726","FCUL"),("azambuja","Azambuja"),("coimbra","Coimbra")]
+query_times = ["07:00","08:00","09:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00",]
+origins = [("Estr.+de+Benfica+627,+1500-087+Lisboa","Benfica"),("38.799248, -9.323340","Rua Buganvilias"),("38.816737, -9.254380","Dona Maria")]
+destinations = [("38.7544013,-9.1603726","FCUL"),("azambuja","Azambuja")]
 query_timeout = 1
 scheduler_timeout = 5
 
@@ -89,7 +89,7 @@ def main():
         csv_writer.writeheader()
 
     schedule_workers(args["write_file"])
-    work_unit(args["write_file"])
+    work()
 
 if __name__ == "__main__":
     main()
